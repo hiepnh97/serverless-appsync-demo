@@ -1,0 +1,19 @@
+name: bookStore-dev
+schema: /schema.graphql
+authenticationType: AMAZON_COGNITO_USER_POOLS
+userPoolConfig:
+  defaultAction: ALLOW
+  userPoolId: !Ref cognitoUserPool
+mappingTemplatesLocation: mapping-templates
+mappingTemplates:
+  - dataSource: booksTable
+    type: Query
+    field: getBookId
+  - dataSource: booksTable
+    type: Mutation
+    field: createBook
+dataSources:
+  - type: AMAZON_DYNAMODB
+    name: booksTable
+    config:
+      tableName: !Ref booksTable
