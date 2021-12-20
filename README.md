@@ -17,7 +17,7 @@
 - Testing the API
 - Attaching a frontend to consumer the API
 
-## 
+## Step 1: Install package + define resources serverless + deploy resources
 -- Instlal Nodejs
 -- Install Serverless framework
 ```
@@ -27,3 +27,5 @@ npm install -g serverless
 ```
 serverless deploy
 ```
+
+
