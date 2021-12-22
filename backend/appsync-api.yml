@@ -1,5 +1,5 @@
 name: bookStore-dev
-schema: /schema.graphql
+# schema: /schema.graphql
 authenticationType: AMAZON_COGNITO_USER_POOLS
 userPoolConfig:
   defaultAction: ALLOW
@@ -9,9 +9,13 @@ mappingTemplates:
   - dataSource: booksTable
     type: Query
     field: getBookId
+    request: 'Query.getBookId.request.vtl'
+    response: 'Query.getBookId.response.vtl'
   - dataSource: booksTable
     type: Mutation
     field: createBook
+    request: 'Mutation.createBook.request.vtl'
+    response: 'Mutation.createBook.response.vtl'
 dataSources:
   - type: AMAZON_DYNAMODB
     name: booksTable

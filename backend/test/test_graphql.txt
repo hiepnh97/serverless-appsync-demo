@@ -1,0 +1,25 @@
+mutation MyMutation {
+  createBook(newbook: {author: "hiep 2", description: "description 02", price: 10.5, title: "The title 02", imageUrl: "https://www.amazon.com/dp/B000NZW3KC"}) {
+    author
+    bookId
+    createdAt
+    imageUrl
+    price
+    updatedAt
+    title
+    description
+  }
+}
+
+query MyQuery {
+  getBookId(bookId: "75202f00-339f-4e17-a2f1-f05cbec75325") {
+    author
+    bookId
+    createdAt
+    description
+    imageUrl
+    price
+    title
+    updatedAt
+  }
+}
